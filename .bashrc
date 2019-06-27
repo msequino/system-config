@@ -123,6 +123,10 @@ alias gotoWorkspace="cd ~/IdeaProjects"
 alias openFePrj="code ~/IdeaProjects/prelios.npl.fe"
 alias smartgit="sh /opt/smartgit/bin/smartgit.sh &"
 alias ..="cd .."
+alias .2="cd ../.."
+alias .3="cd ../../.."
+alias .4="cd ../../../.."
+alias .5="cd ../../../../.."
 
 # reading docker aliases
 if [ -f  ~/.docker_aliases ]; then
@@ -140,4 +144,4 @@ function parse_git_dirty {
 function parse_git_branch {
   git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/[\1$(parse_git_dirty)]/"
 }
-export PS1='\u \[\033[1;33m\]\w\[\033[0m\]$(parse_git_branch)$ '
+export PS1='\u@\h \[\033[1;33m\]\w\[\033[0m\]$(parse_git_branch)$ '
