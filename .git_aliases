@@ -1,0 +1,5 @@
+alias gco="git checkout"
+alias gcm="git commit"
+alias gph="git push"
+alias gpl="git pull"
+alias gad="git add"
