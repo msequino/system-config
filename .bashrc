@@ -128,6 +128,7 @@ alias .3="cd ../../.."
 alias .4="cd ../../../.."
 alias .5="cd ../../../../.."
 alias barroco="ssh -i ~/.ssh/barroco.pem ec2-user@35.177.250.137"
+alias src="source ~/.bashrc"
 
 # reading docker aliases
 if [ -f  ~/.docker_aliases ]; then
