@@ -127,6 +127,7 @@ alias .2="cd ../.."
 alias .3="cd ../../.."
 alias .4="cd ../../../.."
 alias .5="cd ../../../../.."
+alias barroco="ssh -i ~/.ssh/barroco.pem ec2-user@35.177.250.137"
 
 # reading docker aliases
 if [ -f  ~/.docker_aliases ]; then
@@ -145,3 +146,25 @@ function parse_git_branch {
   git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/[\1$(parse_git_dirty)]/"
 }
 export PS1='\u@\h \[\033[1;33m\]\w\[\033[0m\]$(parse_git_branch)$ '
+
+# SUDO - shout at bash to su commands
+# Distributed under GNU GPLv2, @jthistle on github
+
+shopt -s expand_aliases
+
+IFS_=${IFS}
+IFS=":" read -ra PATHS <<< "$PATH"
+
+for i in "${PATHS[@]}"; do
+	for j in $( ls "$i" ); do
+		if [ ${j^} != $j ] && [ $j != "sudo" ]; then
+			alias ${j^}="sudo $j"
+		fi		
+	done
+done
+
+alias SUDO='sudo $(history -p !!)'
+
+IFS=${IFS_}
+
+# end SUDO
