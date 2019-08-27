@@ -1,0 +1,21 @@
+[#NR] LIST ISSUES TOUCHED
+    
+# New features and improvements
+
+No new features and improvements    
+    
+# Breaking changes
+
+No breaking changes    
+    
+# Migration
+    
+No migration required
+    
+# Bug fixes
+    
+No bug fixed
+    
+# Related issue
+    
+No issue closed
