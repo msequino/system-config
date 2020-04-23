@@ -15,5 +15,4 @@ do
 	ln -s "$PWD/$file" "$HOME/$file"
 done
 
-echo "sourcing new files"
-source $HOME/.bashrc
+echo "REMEMBER TO SOURCE FILE -> source $HOME/.bashrc"
